@@ -1,29 +1,33 @@
-<!-- index.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Supermoon</title>
 
   <style>
     body {
+      margin: 0;
+      padding: 40px 0;
+      background: #d9d9d9;
       font-family: Helvetica, Arial, sans-serif;
-      background: white;
       color: black;
-      margin: 40px;
-      line-height: 1.45;
-      font-size: 16px;
+    }
+
+    .page {
+      width: 8.5in;
+      min-height: 11in;
+      background: white;
+      margin: auto;
+      padding: 1in;
+      box-sizing: border-box;
+      box-shadow: 0 0 2px rgba(0,0,0,0.2);
+      position: relative;
     }
 
     a {
       color: blue;
-    }
-
-    .container {
-      max-width: 900px;
     }
 
     .section {
@@ -31,14 +35,55 @@
     }
 
     .about-link {
-      margin-top: 80px;
-      text-align: right;
+      position: absolute;
+      bottom: 1in;
+      right: 1in;
+    }
+
+    .cursor-line {
+      height: 22px;
+      margin-top: 2px;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 1px;
+      height: 18px;
+      background: black;
+      animation: blink 1s steps(1) infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 900px) {
+      body {
+        padding: 0;
+        background: white;
+      }
+
+      .page {
+        width: 100%;
+        min-height: auto;
+        padding: 40px 24px;
+        box-shadow: none;
+      }
+
+      .about-link {
+        position: static;
+        text-align: right;
+        margin-top: 80px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
+
+  <div class="page">
 
     <div>
       Supermoon
@@ -67,6 +112,10 @@
         You'll Need a Miracle
       </a>
       - Rarig Thrust (Minnesota Fringe Festival), Minneapolis MN, August 6–16 2026
+    </div>
+
+    <div class="cursor-line">
+      <span class="cursor"></span>
     </div>
 
     <div>
@@ -103,5 +152,6 @@
     </div>
 
   </div>
+
 </body>
 </html>
